@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    int aluno1, aluno2;
+    int nota1, nota2;
+    char nomeAluno1[50];
+    char nomeAluno2[50];
+    
+    printf("Qual o nome do aluno?\n");
+    fgets(nomeAluno1, sizeof(nomeAluno1), stdin);
+    nomeAluno1[strcspn(nomeAluno1, "\n")]='\0';
+
+    printf("Qual a nota de %s?\n", nomeAluno1);
+    scanf("%d", &nota1);
+    
+    if(nota1>=6 && nota1<10){
+     printf("%s foi aprovado! 🎉  \n\n", nomeAluno1);
+    }else if(nota1>=10){
+     printf("%s arrasou!🏆\n\n", nomeAluno1);
+    }else{
+     printf("%s foi reprovado! 😢 \n\n", nomeAluno1);
+    } 
+    
+    
+    while((getchar())!='\n');
+    
+    printf("Qual o nome do aluno?\n");
+    fgets(nomeAluno2, sizeof(nomeAluno2), stdin);
+    
+    nomeAluno2[strcspn(nomeAluno2, "\n")]='\0';
+    
+    printf("Qual a nota de %s?\n", nomeAluno2);
+    scanf("%d", &nota2);
+    
+    if(nota2>=6 && nota2<10){
+     printf("%s foi aprovado! 🎉 \n", nomeAluno2);
+    }else if(nota2>=10){
+     printf("%s arrasou!🏆\n", nomeAluno2);
+    }else{
+     printf("%s foi reprovado! 😢 \n", nomeAluno2);
+    }
+    
+    
+     
+return 0; 
+}
