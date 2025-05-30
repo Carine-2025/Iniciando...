@@ -2,10 +2,12 @@
 #include <string.h>
 
 int main(){
-    int aluno1, aluno2;
-    int nota1, nota2;
+    
+    int aluno1, aluno2, aluno3;
+    int nota1, nota2, nota3;
     char nomeAluno1[50];
     char nomeAluno2[50];
+    char nomeAluno3[50];
     
     printf("Qual o nome do aluno?\n");
     fgets(nomeAluno1, sizeof(nomeAluno1), stdin);
@@ -34,13 +36,32 @@ int main(){
     scanf("%d", &nota2);
     
     if(nota2>=6 && nota2<10){
-     printf("%s foi aprovado! 🎉 \n", nomeAluno2);
+     printf("%s foi aprovado! 🎉 \n\n", nomeAluno2);
     }else if(nota2>=10){
-     printf("%s arrasou!🏆\n", nomeAluno2);
+     printf("%s arrasou!🏆\n\n", nomeAluno2);
     }else{
-     printf("%s foi reprovado! 😢 \n", nomeAluno2);
+     printf("%s foi reprovado! 😢 \n\n", nomeAluno2);
     }
     
+    while((getchar())!='\n');
+    
+    printf("Qual o nome do aluno?\n");
+    fgets(nomeAluno3, sizeof(nomeAluno3), stdin);
+    
+    nomeAluno3[strcspn(nomeAluno3, "\n")]='\0';
+    
+    printf("Qual a nota de %s?\n", nomeAluno3);
+    scanf("%d", &nota3);
+    
+    if(nota3>=6 && nota3<10){
+     printf("%s foi aprovado! 🎉 \n\n", nomeAluno3);
+    }else if(nota3>=10){
+     printf("%s arrasou!🏆\n\n", nomeAluno3);
+    }else{
+     printf("%s foi reprovado! 😢 \n\n", nomeAluno3);
+    }
+    
+    printf("criado em 30/05/2025");
     
      
 return 0; 
